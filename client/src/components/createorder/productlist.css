@@ -1,0 +1,158 @@
+.product-item{
+    height: 90px;
+}
+
+.name-des{
+    top: 0px;
+    position: relative;
+    height: 22px;
+}
+
+.product-img{
+    top: 140px;
+    left: 110px;
+    width: 45px;
+    height: 43px;
+    /* UI Properties */
+    /* background: transparent url('img/Rectangle 737.png') 0% 0% no-repeat padding-box; */
+    border-radius: 2px;
+    opacity: 1;
+    position: relative;
+}
+.product-name{
+    top: 90px;
+    left: 165px;
+    width: 42px;
+    height: 19px;
+    text-align: left;
+    font: normal normal 600 14px/48px Open Sans;
+    letter-spacing: 0px;
+    color: #5861AE;
+    opacity: 1;
+    position: relative;
+
+}
+.product-des{
+    top: 78px;
+    left: 165px;
+    width: 193px;
+    height: 8px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 10px/48px Open Sans;
+    letter-spacing: 0px;
+    color: #76788B;
+    opacity: 1;
+    position: relative;
+}
+.product-quantity{
+    top: 90px;
+    left: 460px;
+    width: 63px;
+    height: 26px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #5861AE;
+    border-radius: 2px;
+    opacity: 1;
+    position: relative;
+}
+.name-de{
+    position: absolute;
+}
+.wash-img{
+    top: 57px;
+    left: 696px;
+    width: 25px;
+    height: 29px;
+    /* UI Properties */
+    /* background: transparent url('../assests/washing-machine\ \(1\).svg') 0% 0% no-repeat padding-box; */
+    opacity: 1;
+    position: absolute;
+    cursor: pointer;
+}
+.iron-img{
+    top: 57px;
+    left: 799px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    opacity: 1;
+    position: absolute;
+}
+.fold-img{
+    top: 57px;
+    left: 899px;
+    width: 28px;
+    height: 28px;
+    opacity: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.bleach-img{
+    top: 57px;
+    left: 1010px;
+    width: 16px;
+    height: 26px;
+    opacity: 1;
+    position: absolute;
+    cursor: pointer;
+}
+.order-price{
+    top: 56px;
+    left: 1132px;
+    width: 18px;
+    height: 24px;
+    text-align: left;
+    font: normal normal normal 18px/24px Open Sans;
+    letter-spacing: 0.43px;
+    color: #605959;
+    opacity: 0.73;
+    position:relative;
+}
+.all-btn{
+    height: 25px;
+    position: relative;
+}
+.btn-reset{
+    top: 29px;
+    left: 1305px;
+    width: 81px;
+    height: 32px;
+    /* UI Properties */
+    border: 1px solid #5861AE;
+    border-radius: 4px;
+    opacity: 1;
+    position: relative;
+    font:  Open Sans;
+    color: #5861AE;
+    background-color: #FFFFFF;
+    cursor: pointer;
+
+}
+.btn-cancel{
+    /* Layout Properties */
+    top: 865px;
+    left: 1172px;
+    width: 107px;
+    height: 32px;
+    border: 1px solid #5861AE;
+    border-radius: 4px;
+    opacity: 1;
+    position: absolute;
+    cursor: pointer;
+}
+.btn-proceed{
+    top: 865px;
+    left: 1296px;
+    width: 107px;
+    height: 32px;
+    /* UI Properties */
+    background: #5861AE 0% 0% no-repeat padding-box;
+    border: 1px solid #5861AE;
+    border-radius: 4px;
+    opacity: 1;
+    position: absolute;
+    color: #FFFFFF;
+    cursor: pointer;
+}
