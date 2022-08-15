@@ -1,0 +1,46 @@
+.nav-main{
+    top: 90px;
+    left: 0px;
+    width: 57px;
+    height: 933px;
+    background:#5861AE 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position:absolute;
+}
+.nav-home{
+    /* Layout Properties */
+    top: 20px;
+    left: 20px;
+    width: 22px;
+    height: 22px;
+    background: transparent url('../assests/home-run\ \(1\).svg') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position:absolute;
+}
+.nav-more{
+    top: 65px;
+    left: 20px;
+    width: 22px;
+    height: 22px;
+    background: transparent url('../assests/more.svg') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: absolute;
+}
+.nav-div{
+    top: 100px;
+    left: 0px;
+    width: 57px;
+    height: 47px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: absolute;
+}
+.nav-list{
+    top: 14px;
+    left: 20px;
+    width: 25px;
+    height: 18px;
+    opacity: 1;
+    position: absolute;
+    background: transparent url('../assests/list.svg') 0% 0% no-repeat padding-box;
+}
