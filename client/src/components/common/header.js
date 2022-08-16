@@ -7,6 +7,7 @@ const Header = () => {
     const handlelogout = () => {
         localStorage.clear();
         window.history.forward()
+        console.log("logged out")
     }
     return (
         <div>
