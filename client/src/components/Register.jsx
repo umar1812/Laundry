@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
-    let disabled = false;
     const navigate = useNavigate();
     const [user, setUser] = useState({
         name: "",
@@ -17,6 +16,7 @@ const Register = () => {
         pin: "",
         pass: ""
     })
+    const [agree, setAgree] = useState(false);
 
     const saveInput = (e) => {
         let name = e.target.name;
@@ -46,10 +46,11 @@ const Register = () => {
     const navLog = () => {
         navigate("/")
     }
-    const click = () => {
-        disabled = !disabled
-    }
 
+
+    const checkboxHandler = () => {
+        setAgree(!agree);
+    }
     return (
         <>
             <Headerlog />
@@ -89,9 +90,9 @@ const Register = () => {
                         <input onChange={(e) => { saveInput(e) }} className='inputSpace' type="password" placeholder='Password' name='pass' />
                     </span>
                     <div className='agree'>
-                        <input onClick={click} type="checkbox" /> <a href="blank">I agree to Terms & Condition receiving marketing and promotional materials</a>
+                        <input onChange={checkboxHandler} type="checkbox" /> <a href="blank">I agree to Terms & Condition receiving marketing and promotional materials</a>
                         <br />
-                        <button id='regbtn' disabled={disabled} onClick={handleSubmit}  >Register</button>
+                        <button id='regbtn' disabled={!agree} onClick={handleSubmit}  >Register</button>
                     </div>
                 </form>
             </div>

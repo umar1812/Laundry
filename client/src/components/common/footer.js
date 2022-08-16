@@ -1,12 +1,10 @@
 import "./foot.css";
-const Footer = ()=>{
-    return(
+const Footer = () => {
+    return (
         <>
-        <div className="footer-main">
-            <span className="footer-year">2021</span>
-            <span className="footer-symbol">©</span>
-            <span className="footer-laundry">Laundry</span>
-        </div>
+            <div className="footer-main">
+                <p>2021 &copy; Laundry</p>
+            </div>
         </>
     )
 }

@@ -2,14 +2,20 @@
   box-sizing: border-box;
 }
 
+html {
+  max-width: 100%;
+  /* overflow-x: hidden; */
+
+}
+
 /* ......Header....... */
-header {
+#header {
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 2px 48px #0000000F;
 }
 
-header h3 {
+#header h3 {
   float: left;
   color: #5861AE;
   font-family: Verdana, sans-serif;
@@ -17,7 +23,7 @@ header h3 {
   margin: 1.2% 0 0 8%;
 }
 
-nav {
+#nav {
   display: inline-block;
   margin: 0;
 }
@@ -28,7 +34,7 @@ nav ul {
   padding-right: 0;
 }
 
-nav p {
+.nav p {
   padding: 5% 20px 0px 20px;
   font-family: Verdana, sans-serif;
   font-size: small;
@@ -39,7 +45,7 @@ nav p {
   margin-bottom: 0;
 }
 
-.navlist {
+#navlist {
   background-color: #4552C1;
   color: white;
 
@@ -199,7 +205,7 @@ h2,
   color: #5861AE;
   font-weight: normal;
   margin-bottom: 0;
-  margin-top: 10px;
+  margin-top: 0;
   font-family: Verdana, sans-serif;
   font-size: larger;
 }
@@ -261,7 +267,7 @@ ul {
 
 }
 
-img {
+.logos {
   height: 20px;
   width: 20px;
 }

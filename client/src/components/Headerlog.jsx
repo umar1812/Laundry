@@ -3,14 +3,14 @@ import React from 'react'
 const Headerlog = () => {
     return (
         <div>
-            <header>
+            <header id='header'>
                 <h3>LAUNDRY</h3>
-                <nav>
+                <nav className='nav'>
                     <ul>
                         <p>Home</p>
                         <p>Price</p>
                         <p>Career</p>
-                        <p className='navlist'>Sign in</p>
+                        <p id='navlist'>Sign in</p>
                     </ul>
                 </nav>
             </header>

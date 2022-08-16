@@ -1,14 +1,20 @@
-.footer-main{
-    top: 978px;
+.footer-main {
+    top: 983px;
     left: 0px;
-    width: 1440px;
-    height: 50px;
-    background: #182838 0% 0% no-repeat padding-box;
+    width: 100vw;
+    height: 40px;
     border: 1px solid #707070;
     opacity: 1;
-    position:absolute;
+    position: absolute;
+    text-align: center;
+    color: white;
+    background-color: #182838;
+    align-items: center;
+    padding-top: 0.8%;
+    font-family: Verdana, sans-serif;
 }
-.sign-year{
+
+.sign-year {
     top: 17px;
     left: 670px;
     width: 30px;
@@ -16,11 +22,12 @@
     text-align: center;
     font: normal normal normal 12px/24px Avenir;
     letter-spacing: 0.12px;
-    color:black;
+    color: black;
     opacity: 1;
     position: absolute;
 }
-.sign-symbol{
+
+.sign-symbol {
     top: 18.5px;
     left: 702px;
     width: 14px;
@@ -29,9 +36,10 @@
     border: 1px solid #FEFFFF;
     opacity: 1;
     border-style: none;
-    position:absolute;
+    position: absolute;
 }
-.sign-laundry{
+
+.sign-laundry {
     top: 899px;
     left: 725px;
     width: 44px;
