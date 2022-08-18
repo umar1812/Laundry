@@ -7,6 +7,10 @@ h2 {
     font-family: Verdana, sans-serif;
 }
 
+h2.topdiv {
+    margin-top: 0;
+}
+
 .goto {
     left: 47vw;
     /* top: 50vh; */
@@ -20,6 +24,27 @@ h2 {
     border-radius: 4px;
     opacity: 1;
     position: relative;
+    background-color: white;
+}
+
+.goto:hover,
+.goto2:hover {
+    color: white;
+    background-color: #5861AE;
+}
+
+.goto2 {
+    border: 1px solid #5861AE;
+    border-radius: 4px;
+    opacity: 1;
+    width: 107px;
+    height: 32px;
+    color: #5861AE;
+    cursor: pointer;
+    margin-left: 73vw;
+    margin-top: 13px;
+    background-color: white;
+
 }
 
 .noorder {
@@ -52,9 +77,9 @@ h2 {
 }
 
 .page-titlebar2 {
-    top: 0px;
+    top: 43px;
     left: 99px;
-    width: 1293px;
+    width: 93.13%;
     height: 50px;
     /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -81,7 +106,7 @@ h2 {
 
 .orderdatetime {
     top: 9px;
-    left: 104px;
+    left: 80px;
     width: 108px;
     height: 17px;
     /* UI Properties */
@@ -95,7 +120,7 @@ h2 {
 
 .StoreLocation {
     top: 9px;
-    left: 201px;
+    left: 135px;
     width: 83px;
     height: 17px;
     /* UI Properties */
@@ -110,7 +135,7 @@ h2 {
 
 .City {
     top: 9px;
-    left: 290px;
+    left: 215px;
     width: 22px;
     height: 17px;
     /* UI Properties */
@@ -124,7 +149,7 @@ h2 {
 
 .StorePhone {
     top: 9px;
-    left: 400px;
+    left: 335px;
     width: 70px;
     height: 17px;
     /* UI Properties */
@@ -138,7 +163,7 @@ h2 {
 
 .TotalItems {
     top: 9px;
-    left: 483px;
+    left: 420px;
     width: 64px;
     height: 17px;
     /* UI Properties */
@@ -152,7 +177,7 @@ h2 {
 
 .Price {
     top: 9px;
-    left: 570px;
+    left: 490px;
     width: 29px;
     height: 17px;
     /* UI Properties */
@@ -166,7 +191,7 @@ h2 {
 
 .Status {
     top: 9px;
-    left: 664px;
+    left: 580px;
     width: 36px;
     height: 17px;
     /* UI Properties */
@@ -222,7 +247,7 @@ h2 {
 
 .orderdatetime2 {
     top: 16px;
-    left: 145px;
+    left: 125px;
     width: 111px;
     height: 17px;
     /* UI Properties */
@@ -236,7 +261,7 @@ h2 {
 
 .StoreLocation2 {
     top: 16px;
-    left: 340px;
+    left: 295px;
     width: 48px;
     height: 17px;
     /* UI Properties */
@@ -250,7 +275,7 @@ h2 {
 
 .City2 {
     top: 16px;
-    left: 500px;
+    left: 430px;
     width: 57px;
     height: 17px;
     /* UI Properties */
@@ -263,7 +288,7 @@ h2 {
 
 .StorePhone2 {
     top: 16px;
-    left: 630px;
+    left: 570px;
     width: 108px;
     height: 17px;
     /* UI Properties */
@@ -278,7 +303,7 @@ h2 {
 .TotalItems2 {
 
     top: 16px;
-    left: 790px;
+    left: 750px;
     width: 14px;
     height: 17px;
     /* UI Properties */
@@ -292,7 +317,7 @@ h2 {
 
 .Price2 {
     top: 16px;
-    left: 920px;
+    left: 850px;
     width: 38px;
     height: 17px;
     /* UI Properties */
@@ -306,7 +331,7 @@ h2 {
 
 .Status2 {
     top: 16px;
-    left: 1020px;
+    left: 975px;
     width: 82px;
     height: 17px;
     /* UI Properties */
@@ -321,7 +346,7 @@ h2 {
 
 .openModalBtn {
     top: 16px;
-    left: 1120px;
+    left: 1080px;
     width: 100px;
     height: 17px;
     border: none;
@@ -338,7 +363,7 @@ h2 {
 
 .view2 {
     top: 13px;
-    left: 1235px;
+    left: 1200px;
     width: 18px;
     height: 17px;
     /* UI Properties */

@@ -7,4 +7,12 @@ const Private = () => {
     )
 }
 
+function getToken() {
+    if (window.localStorage) {
+        return window.localStorage.getItem("user")
+    }
+    return ""
+}
+
 export default Private
+export { getToken } 

@@ -17,15 +17,6 @@ function Login() {
     }
 
 
-    // const saveInput = (e) => {
-    //     if (e.target.value.includes("@")) {
-    //         setUser({ ...user, email: e.target.value })
-    //         console.log(user)
-    //     } else {
-    //         setUser({ ...user, phone: e.target.value })
-    //         console.log(user)
-    //     }
-    // }
 
     const handleSubmit = async (e) => {
         try {
@@ -33,7 +24,7 @@ function Login() {
             e.preventDefault();
             const res = await axios.post("http://localhost:5000/login", user, { withCredentials: true, credentials: 'include' })
             localStorage.setItem("user", res.data)
-            navigate("/order")
+            navigate("/order/history")
 
         } catch (err) {
             window.alert("Invalid credentials")

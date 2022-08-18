@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const validator = require('validator')
 const bcrypt = require("bcryptjs")
 const jwt = require('jsonwebtoken')
 
@@ -7,16 +6,10 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true
     },
     email: {
         type: String,
         required: true,
-        validate(value) {
-            if (!validator.isEmail(value)) {
-                throw new Error("Invalid Email")
-            }
-        },
         unique: true
     },
     phone: {
@@ -46,8 +39,7 @@ const userSchema = new mongoose.Schema({
     },
     tokens: [{
         token: {
-            type: String,
-            required: true
+            type: String
         }
     }]
 })
@@ -61,7 +53,7 @@ userSchema.pre("save", async function (next) {
 
 userSchema.methods.generateToken = async function () {
     try {
-        let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
+        let token = jwt.sign({ email: this.email }, process.env.SECRET_KEY);
         this.tokens = this.tokens.concat({ token })
         await this.save()
         return token;

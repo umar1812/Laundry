@@ -14,7 +14,7 @@ const Summary = (props) => {
                 url: "http://localhost:5000/create",
                 method: "POST",
                 headers: {
-                    "authorization": localStorage.authorization
+                    "authorization": localStorage.user
                 },
                 data: {
                     producttype: props.state,
@@ -31,7 +31,6 @@ const Summary = (props) => {
             return window.alert("Please select store address")
         }
 
-        //axios.post("http://localhost:3001/order/create",data:{},{headers:{},})
 
     }
 
@@ -73,7 +72,13 @@ const Summary = (props) => {
                     <span className="name-total">Total:</span>
                     <div className="total-val">Rs {props.subtotal + 90}</div>
                 </section>
-                {/* <div className="user-add">Address</div> */}
+                <div className="user-add">
+                    <p className="uad"> Address</p>
+                    <div className="home-2">
+                        <p className="home1"><strong>Home</strong></p>
+                        <p>#223, 10th road, Jp Nagar, Bangalore</p>
+                    </div>
+                </div>
                 <div className="btn-bar" >
                     <button className="btn-confirm" onClick={handlesubmit} >Confirm</button>
                 </div>

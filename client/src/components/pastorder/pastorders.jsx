@@ -3,7 +3,7 @@ import Header from "../common/header"
 import NavBar from "../common/navbar"
 import Footer from "../common/footer"
 import Search from "../common/search"
-
+import { getToken } from '../Private'
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useRef } from 'react';
 import eyeIcon from "../assests/eyeicon.svg"
@@ -22,10 +22,10 @@ const Pastorders = () => {
         navigate("/order");
     }
     const cancelOrderfunc = (id) => {
-        // let token = getToken()
-        // let header = { Authorization: token }
+        let token = getToken()
+        let header = { authorization: token }
 
-        axios.delete(`http://localhost:5000/order/cancel/${id}`)
+        axios.delete(`http://localhost:5000/cancel/${id}`, { headers: header })
             .then(function (response) {
                 console.log(response)
                 window.location.reload();
@@ -38,10 +38,10 @@ const Pastorders = () => {
     }
     let data = useRef(null)
     useEffect(() => {
-        data.current = axios.get('http://localhost:5000/order/history')
+        let token = getToken()
+        let header = { "authorization": token }
+        data.current = axios.get('http://localhost:5000/history', { headers: header })
             .then(function (response) {
-
-
                 setorders(response.data)
                 console.log(response.data)
             }).catch((err) => {
@@ -51,78 +51,65 @@ const Pastorders = () => {
 
     }, []);
 
-    if (data) {
-        return (
+    // let status = ["In washing", "In ironing", "Ready to pickup"]
 
-            <>
+    return (
 
-                <Header />
-                <NavBar />
-                <Search />
+        <>
 
-                <div><h2 className='topdiv' >Orders | 0</h2></div>
+            <Header />
+            <NavBar />
+            <Search />
+            <button className="goto2" onClick={gotocreateorder}>Create</button>
+            <div><h2 className='topdiv' >Orders | 0</h2></div>
 
-                <div className='page-titlebar'>
-                    <span className='orderid'>Order Id</span>
-                    <span className='orderdatetime'>Order Date & Time</span>
-                    <span className='StoreLocation' >Store Location</span>
-                    <span className='City'>City</span>
-                    <span className='StorePhone'>Store Phone</span>
-                    <span className='TotalItems'>Total Items</span>
-                    <span className='Price'>Price</span>
-                    <span className='Status'>Status</span>
-                    <span className='canc'>   </span>
-                    <span className='view'>view</span>
+            <div className='page-titlebar'>
+                <span className='orderid'>Order Id</span>
+                <span className='orderdatetime'>Order Date & Time</span>
+                <span className='StoreLocation' >Store Location</span>
+                <span className='City'>City</span>
+                <span className='StorePhone'>Store Phone</span>
+                <span className='TotalItems'>Total Items</span>
+                <span className='Price'>Price</span>
+                <span className='Status'>Status</span>
+                <span className='canc'>   </span>
+                <span className='view'>view</span>
+
+            </div>
+
+            {orders.map((order, key) => (
+                <div className='page-titlebar2 ' key={key}>
+                    <span className='orderid2'>{order.userid}</span>
+                    <span className='orderdatetime2'>{order.datetime}</span>
+                    <span className='StoreLocation2' >JP Nagar</span>
+                    <span className='City2'>Bangalore</span>
+                    <span className='StorePhone2'>+91 7778 86542</span>
+                    <span className='TotalItems2'>10</span>
+                    <span className='Price2'>{order.subtotal + 90}Rs</span>
+                    <span className='Status2'>Ready to pickup</span>
+                    <button
+                        className="openModalBtn"
+                        onClick={() => {
+                            setcancelid(order._id)
+                            setModalOpen(true);
+                        }}>Cancel order</button>
+                    <img src={eyeIcon} className='view2' alt="err" onClick={() => {
+                        setprice(order)
+                        setsumm(true);
+                    }}></img>
 
                 </div>
-
-                {orders.map((order, key) => (
-                    <div className='page-titlebar2 ' key={key}>
-                        <span className='orderid2'>{order.orderid}</span>
-                        <span className='orderdatetime2'>{order.datetime}</span>
-                        <span className='StoreLocation2' >bodh gaya</span>
-                        <span className='City2'>gaya</span>
-                        <span className='StorePhone2'>+91 8795948686</span>
-                        <span className='TotalItems2'>10</span>
-                        <span className='Price2'>{order.subtotal + 90}Rs</span>
-                        <span className='Status2'>Redy to pickup</span>
-                        <button
-                            className="openModalBtn"
-                            onClick={() => {
-                                setcancelid(order._id)
-                                console.log(order)
-                                setModalOpen(true);
-                            }}>Cancel order</button>
-                        <img src={eyeIcon} className='view2' alt="err" onClick={() => {
-                            setprice(order)
-                            setsumm(true);
-                        }}></img>
-
-                    </div>
-                ))}
-                {modalOpen && <Modal setOpenModal={setModalOpen} cancelid={cancelid} cancelOrderfunc={cancelOrderfunc} />}{summ && <Summary orders={price} closesummary={setsumm} />}
+            ))}
+            {modalOpen && <Modal setOpenModal={setModalOpen} cancelid={cancelid} cancelOrderfunc={cancelOrderfunc} />}{summ && <Summary orders={price} closesummary={setsumm} />}
 
 
-                <Footer />
+            <Footer />
 
 
 
-            </>
-        )
-    } else {
-        return (
-            <>
-                <Header />
-                <NavBar />
-                <Search />
-                <span className='noorder'>
-                    <span className='notavailable'>No orders available</span>
-                    <button className="goto" onClick={gotocreateorder}>Create</button>
-                </span>
-                <Footer />
-            </>
-        )
-    }
+        </>
+    )
+
 
 };
 export default Pastorders

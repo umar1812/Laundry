@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require("./db/model/userSchema")
 const bcrypt = require("bcryptjs")
 
+
 router.post("/login", async (req, res) => {
     try {
         const login = await User.findOne({ $or: [{ email: req.body.id }, { phone: req.body.id }] })
@@ -41,15 +42,12 @@ router.post("/register", async (req, res) => {
         })
         const newUser = await user.save();
         console.log(newUser, "User added successfully");
-        res.send(newUser).status(201)
+        res.status(201).send(newUser)
 
     } catch (err) {
-        res.status(500)
-        console.log(err.message)
+        res.status(500).send()
+        console.log(err.message + "Status code 500")
     }
 })
 
-// router.get("/orders", async (req, res) => {
-//     res.send(req.getUser)
-// })
 module.exports = router;

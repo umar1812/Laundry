@@ -27,7 +27,7 @@ const Register = () => {
         try {
             e.preventDefault();
             const { name, email, phone, state, district, add, pin, pass } = user;
-            await fetch("http://localhost:5000/register", {
+            const res = await fetch("http://localhost:5000/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -36,8 +36,13 @@ const Register = () => {
                     name, email, phone, state, district, add, pin, pass
                 })
             })
-            console.log("User added successfully")
-            navigate("/")
+            console.log(res.status)
+
+            if (res.status === 201) {
+                navigate("/")
+            } else {
+                window.alert("User already exists")
+            }
         } catch (err) {
             console.log(err.message)
         }
