@@ -25,7 +25,7 @@ const Pastorders = () => {
         let token = getToken()
         let header = { authorization: token }
 
-        axios.delete(`http://localhost:5000/cancel/${id}`, { headers: header })
+        axios.delete(`https://laundry-cart-serverside.herokuapp.com/cancel/${id}`, { headers: header })
             .then(function (response) {
                 console.log(response)
                 window.location.reload();
@@ -40,7 +40,7 @@ const Pastorders = () => {
     useEffect(() => {
         let token = getToken()
         let header = { "authorization": token }
-        data.current = axios.get('http://localhost:5000/history', { headers: header })
+        data.current = axios.get('https://laundry-cart-serverside.herokuapp.com/history', { headers: header })
             .then(function (response) {
                 setorders(response.data)
                 console.log(response.data)

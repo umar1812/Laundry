@@ -11,7 +11,7 @@ const Summary = (props) => {
             //const time=new Date()
 
             axios({
-                url: "http://localhost:5000/create",
+                url: "https://laundry-cart-serverside.herokuapp.com/create",
                 method: "POST",
                 headers: {
                     "authorization": localStorage.user

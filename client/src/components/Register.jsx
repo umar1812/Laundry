@@ -27,7 +27,7 @@ const Register = () => {
         try {
             e.preventDefault();
             const { name, email, phone, state, district, add, pin, pass } = user;
-            const res = await fetch("http://localhost:5000/register", {
+            const res = await fetch("https://laundry-cart-serverside.herokuapp.com/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

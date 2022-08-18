@@ -22,7 +22,7 @@ function Login() {
         try {
             console.log(user)
             e.preventDefault();
-            const res = await axios.post("http://localhost:5000/login", user, { withCredentials: true, credentials: 'include' })
+            const res = await axios.post("https://laundry-cart-serverside.herokuapp.com/login", user, { withCredentials: true, credentials: 'include' })
             localStorage.setItem("user", res.data)
             navigate("/order/history")
 
